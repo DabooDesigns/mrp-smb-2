@@ -1,0 +1,43 @@
+is_package: true
+container: {type: ColumnPanel}
+components:
+- name: id
+  properties: {}
+  type: Label
+  layout_properties: {grid_position: 'OBIOOT,PODZGC RDGNQN,ENQARW'}
+  data_bindings:
+  - {property: text, code: 'self.item[''id'']', writeback: false}
+- name: name
+  properties: {}
+  type: Label
+  layout_properties: {grid_position: 'OBIOOT,PODZGC ACDKLD,KVSCBC'}
+  data_bindings:
+  - {property: text, code: 'self.item[''name'']', writeback: false}
+- name: image_1
+  properties: {}
+  type: Image
+  layout_properties: {grid_position: 'OBIOOT,PODZGC BKAXGR,YHOGNO'}
+- name: company
+  properties: {}
+  type: Label
+  layout_properties: {grid_position: 'OBIOOT,EZVZAL GEMSZS,LCRGBC'}
+  data_bindings:
+  - {property: text, code: 'self.item[''customer_company''][''name'']', writeback: false}
+- name: description
+  properties: {}
+  type: Label
+  layout_properties: {grid_position: 'OBIOOT,EZVZAL MVSRMC,SXEKNO'}
+  data_bindings:
+  - {property: text, code: 'self.item[''description'']', writeback: false}
+- name: category
+  properties: {}
+  type: Label
+  layout_properties: {grid_position: 'OBIOOT,EZVZAL CQBORT,NXDFGN'}
+- name: sku
+  properties: {}
+  type: Label
+  layout_properties: {grid_position: 'OBIOOT,EZVZAL BLXEHD,RCEDGV'}
+- name: customer_sku
+  properties: {align: left}
+  type: Label
+  layout_properties: {grid_position: 'OBIOOT,EZVZAL UKQXQS,XLWMRZ'}

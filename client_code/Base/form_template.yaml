@@ -1,0 +1,80 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components: []
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+  components:
+  - name: sign_in
+    properties: {text: Sign In, icon: 'fa:user'}
+    type: Link
+    layout_properties: {}
+    event_bindings: {click: sign_in_click}
+- name: label_1
+  properties: {text: MRP SMB, role: headline}
+  type: Label
+  layout_properties: {slot: title}
+- name: left_nav_column_panel
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {slot: left-nav}
+  components:
+  - name: link_Home
+    properties: {text: Home, align: center, bold: false}
+    type: Link
+    layout_properties: {grid_position: 'CVUXJH,ZUTMGE'}
+    event_bindings: {click: link_Home_click}
+  - name: left_nav_admin
+    properties: {spacing_above: small, spacing_below: small, visible: true}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'KTOKNI,KQUOLF'}
+    data_bindings:
+    - {property: visible, code: 'self.item[''admin_menu_visible'']', writeback: false}
+    components:
+    - name: label_2_copy
+      properties: {align: center, text: Admin, bold: true, underline: true, font_size: 16}
+      type: Label
+      layout_properties: {grid_position: 'LLLOQA,DRKWWL'}
+      data_bindings:
+      - {property: font, code: '', writeback: false}
+    - name: link_admin_products
+      properties: {text: Products, align: center}
+      type: Link
+      layout_properties: {grid_position: 'CEMBQM,HTDDFY'}
+      event_bindings: {click: link_admin_products_click}
+    - name: link_admin_customer_orders
+      properties: {text: Customer Orders, align: center, bold: false}
+      type: Link
+      layout_properties: {grid_position: 'FKLUCE,KHYWRV'}
+      event_bindings: {click: link_admin_customer_orders_click}
+  - name: left_nav_customer
+    properties: {spacing_above: small, spacing_below: small, visible: true}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'YIAIYY,MVDLYP'}
+    data_bindings:
+    - {property: visible, code: 'self.item[''customer_menu_visible'']', writeback: false}
+    components:
+    - name: label_2_copy_copy
+      properties: {align: center, text: Customer, bold: true, underline: true, font_size: 16}
+      type: Label
+      layout_properties: {grid_position: 'LLLOQA,VPXLFQ'}
+      data_bindings:
+      - {property: font, code: '', writeback: false}
+    - name: link_customer_products
+      properties: {text: Products, align: center}
+      type: Link
+      layout_properties: {grid_position: 'CEMBQM,HTDDFY'}
+      event_bindings: {}
+    - name: link_customer_orders
+      properties: {text: Customer Orders, align: center, bold: false}
+      type: Link
+      layout_properties: {grid_position: 'FKLUCE,KHYWRV'}
+      event_bindings: {click: link_admin_customer_orders_click}

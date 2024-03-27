@@ -1,0 +1,43 @@
+container: {type: ColumnPanel}
+components:
+- name: label_1
+  properties: {text: ID}
+  type: Label
+  layout_properties: {grid_position: 'PIMGOE,MVCZNJ'}
+- name: id
+  properties: {}
+  type: TextBox
+  layout_properties: {grid_position: 'PIMGOE,YCETZH'}
+  data_bindings:
+  - {property: text, code: 'self.item[''id'']', writeback: true}
+- name: label_2
+  properties: {text: Customer Company}
+  type: Label
+  layout_properties: {grid_position: 'LOKXWJ,XWVHQQ'}
+- name: customer_company
+  properties: {include_placeholder: true, placeholder: choose company}
+  type: DropDown
+  layout_properties: {grid_position: 'LOKXWJ,DTXYGM'}
+  data_bindings:
+  - {property: selected_value, code: 'self.item[''customer_company'']', writeback: true}
+- name: label_3
+  properties: {text: Name}
+  type: Label
+  layout_properties: {grid_position: 'XFPQLD,JOSBZK'}
+- name: name
+  properties: {}
+  type: TextBox
+  layout_properties: {grid_position: 'XFPQLD,NSPTQG'}
+  data_bindings:
+  - {property: text, code: 'self.item[''name'']', writeback: true}
+- name: label_4
+  properties: {text: Description}
+  type: Label
+  layout_properties: {grid_position: 'OPNIUE,CBEECA'}
+- name: description
+  properties: {}
+  type: TextArea
+  layout_properties: {grid_position: 'OPNIUE,VNILWE'}
+  data_bindings:
+  - {property: text, code: 'self.item[''description'']', writeback: true}
+is_package: true

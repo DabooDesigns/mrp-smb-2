@@ -1,0 +1,277 @@
+correct_dependency_ids: {dep_cuknp5dgztw0f: C6ZZPAPN4YYF5NVJ, dep_d5ymaflj1m8l8: ZFLRWWWEIXT2W2EK}
+dependencies:
+- dep_id: dep_cuknp5dgztw0f
+  version: {dev: false}
+  resolution_hints: {app_id: C6ZZPAPN4YYF5NVJ, name: Anvil Extras, package_name: anvil_extras}
+- dep_id: dep_d5ymaflj1m8l8
+  version: {dev: false}
+  resolution_hints: {app_id: ZFLRWWWEIXT2W2EK, name: Clone of Form Validation, package_name: form_checker}
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/users.yml
+  client_config: {mfa_timeout_days: 365, require_secure_passwords: true, use_token: false,
+    allow_mfa_email_reset: false, use_email: true, allow_remember_me: true, allow_signup: false,
+    enable_automatically: true, confirm_email: true, require_mfa: false, remember_me_days: 30}
+  server_config: {user_table: users}
+- source: /runtime/services/anvil/secrets.yml
+  client_config: {}
+  server_config: {}
+startup: {type: form, module: Base}
+package_name: MRP_SMB
+allow_embedding: false
+name: Clone of MRP SMB (2)
+runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
+metadata: {title: MRP SMB, description: ''}
+startup_form: null
+db_schema:
+  products:
+    client: search
+    server: full
+    columns:
+    - name: customer_company
+      admin_ui: {width: 200, order: 0}
+      type: link_single
+      target: user_company
+    - name: name
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: description
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: image
+      admin_ui: {width: 200, order: 3}
+      type: media
+    - name: category
+      admin_ui: {width: 200, order: 4}
+      type: link_single
+      target: product_category
+    - name: ean
+      admin_ui: {order: 5, width: 200}
+      type: string
+    - name: sku
+      admin_ui: {order: 6, width: 200}
+      type: string
+    - name: cogs
+      admin_ui: {order: 7, width: 200}
+      type: number
+    - name: wholesale_price
+      admin_ui: {width: 200, order: 8}
+      type: number
+    - name: retail_price
+      admin_ui: {width: 200, order: 9}
+      type: number
+    - name: notes
+      admin_ui: {width: 200, order: 10}
+      type: string
+    - name: internal_notes
+      admin_ui: {width: 200, order: 11}
+      type: string
+    - name: created
+      admin_ui: {order: 12, width: 200}
+      type: datetime
+    - name: pricing_updated
+      admin_ui: {width: 200, order: 13}
+      type: datetime
+    - name: status
+      admin_ui: {width: 200, order: 14}
+      type: link_single
+      target: product_status
+    - name: minimum_order
+      admin_ui: {width: 200, order: 15}
+      type: number
+    - name: manufacturing_instructions
+      admin_ui: {width: 200, order: 16}
+      type: media
+    - name: revision
+      admin_ui: {width: 200, order: 17}
+      type: number
+    - name: replenish_threshold
+      admin_ui: {width: 200, order: 18}
+      type: number
+    - name: updated
+      admin_ui: {order: 12.5, width: 200}
+      type: datetime
+    - name: id
+      admin_ui: {order: -1, width: 200}
+      type: number
+    - name: customer_sku
+      admin_ui: {order: 6.5, width: 200}
+      type: string
+    title: Products
+  product_images:
+    client: search
+    server: full
+    columns:
+    - name: name
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: image
+      admin_ui: {width: 200, order: 1}
+      type: media
+    - name: date_added
+      admin_ui: {width: 200, order: 2}
+      type: datetime
+    - name: active
+      admin_ui: {width: 200, order: 3}
+      type: bool
+    - name: product
+      admin_ui: {width: 200, order: 4}
+      type: link_single
+      target: products
+    - name: user
+      admin_ui: {width: 200, order: 5}
+      type: link_single
+      target: users
+    title: Product Images
+  counter:
+    client: search
+    server: full
+    columns:
+    - name: product
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: customer_order
+      admin_ui: {width: 200, order: 1}
+      type: number
+    - name: customer_order_item
+      admin_ui: {width: 200, order: 2}
+      type: number
+    title: counter
+  user_role:
+    client: none
+    server: full
+    columns:
+    - name: user_role_list
+      admin_ui: {order: 0, width: 200}
+      type: string
+    title: User Role
+  users:
+    client: none
+    server: full
+    columns:
+    - name: email
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: enabled
+      admin_ui: {order: 1, width: 200}
+      type: bool
+    - name: last_login
+      admin_ui: {order: 2, width: 200}
+      type: datetime
+    - name: password_hash
+      admin_ui: {order: 3, width: 200}
+      type: string
+    - name: n_password_failures
+      admin_ui: {order: 4, width: 200}
+      type: number
+    - name: confirmed_email
+      admin_ui: {order: 5, width: 200}
+      type: bool
+    - name: remembered_logins
+      admin_ui: {order: 6, width: 200}
+      type: simpleObject
+    - name: mfa
+      admin_ui: {order: 7, width: 200}
+      type: simpleObject
+    - name: customer_company
+      admin_ui: {order: 9, width: 200}
+      type: link_single
+      target: user_company
+    - name: user_role
+      admin_ui: {width: 200}
+      type: link_single
+      target: user_role
+    title: Users
+  user_company:
+    client: search
+    server: full
+    columns:
+    - name: name
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: website
+      admin_ui: {order: 1, width: 200}
+      type: string
+    - name: phone
+      admin_ui: {order: 2, width: 200}
+      type: string
+    - name: internal_notes
+      admin_ui: {order: 3, width: 200}
+      type: string
+    - name: active
+      admin_ui: {order: 4, width: 200}
+      type: bool
+    - name: description
+      admin_ui: {order: 1.5, width: 200}
+      type: string
+    - name: address
+      admin_ui: {order: 2.5, width: 200}
+      type: string
+    - name: address_1
+      admin_ui: {order: 2.75, width: 200}
+      type: string
+    - name: city
+      admin_ui: {order: 2.875, width: 200}
+      type: string
+    - name: state
+      admin_ui: {order: 2.9375, width: 200}
+      type: string
+    - name: zip
+      admin_ui: {order: 2.96875, width: 200}
+      type: string
+    - name: country
+      admin_ui: {order: 2.984375, width: 200}
+      type: string
+    title: User Company
+  product_files:
+    client: search
+    server: full
+    columns:
+    - name: name
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: file
+      admin_ui: {width: 200, order: 1}
+      type: media
+    - name: date_added
+      admin_ui: {width: 200, order: 2}
+      type: datetime
+    - name: active
+      admin_ui: {width: 200, order: 3}
+      type: bool
+    - name: user
+      admin_ui: {order: 4, width: 200}
+      type: link_single
+      target: users
+    - name: product
+      admin_ui: {order: 3.5, width: 200}
+      type: link_single
+      target: products
+    title: Product Files
+  product_category:
+    client: search
+    server: full
+    columns:
+    - name: customer_company
+      admin_ui: {order: 0, width: 200}
+      type: link_single
+      target: user_company
+    - name: category
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: active
+      admin_ui: {width: 200, order: 2}
+      type: bool
+    title: Product Category
+  product_status:
+    client: search
+    server: full
+    columns:
+    - name: status
+      admin_ui: {order: 0, width: 200}
+      type: string
+    title: Product Status
+secrets: {}
+renamed: true
