@@ -8,10 +8,10 @@ from datetime import datetime
 import autoinc
 
 @anvil.server.callable
-def get_short(string, howmany):
+def get_short(string, howmany = 5):
   nosp = string.replace(" ", "")
   short = nosp[:howmany]
-  return short
+  return short.upper()
   
 @anvil.server.callable
 def get_products():
@@ -22,8 +22,22 @@ def get_products():
 
 @anvil.server.callable
 def add_products(product_dict):
+  print (product_dict)
+  print (product_dict['customer_company']['name'])
+  ccval = (product_dict['customer_company']['name'])
+  print (ccval)
+  id = anvil.server.call('get_next_product_number')
+
+
+  ccvalret = anvil.server.call('get_short', ccval)
+  strings = [ccvalret, str(id)]
+  joined_string = "-".join(strings)
+  print(joined_string)  # Output: apple-banana-cherry
+#  print (ccvalret)  
   app_tables.products.add_row(
-    id=anvil.server.call('get_next_product_number'),
+    id=id,
+    sku=joined_string,
+    #   id=anvil.server.call('get_next_product_number'),
     created=datetime.now(),
 
 #    sku=anvil.server.call('get_short', product_dict.values(), 5),
