@@ -21,7 +21,7 @@ services:
 startup: {type: form, module: Base}
 package_name: MRP_SMB
 allow_embedding: false
-name: Clone of MRP SMB (2)
+name: MRP SMB 2
 runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
 metadata: {title: MRP SMB, description: ''}
 startup_form: null
