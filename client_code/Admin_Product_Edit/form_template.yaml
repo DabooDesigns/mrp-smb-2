@@ -1,15 +1,5 @@
 container: {type: ColumnPanel}
 components:
-- name: label_1
-  properties: {text: ID}
-  type: Label
-  layout_properties: {grid_position: 'PIMGOE,MVCZNJ'}
-- name: id
-  properties: {}
-  type: TextBox
-  layout_properties: {grid_position: 'PIMGOE,YCETZH'}
-  data_bindings:
-  - {property: text, code: 'self.item[''id'']', writeback: true}
 - name: label_2
   properties: {text: Customer Company}
   type: Label
@@ -40,4 +30,20 @@ components:
   layout_properties: {grid_position: 'OPNIUE,VNILWE'}
   data_bindings:
   - {property: text, code: 'self.item[''description'']', writeback: true}
+- name: label_1
+  properties: {text: Image}
+  type: Label
+  layout_properties: {grid_position: 'UHJDIP,ZPTQHN'}
+- name: image
+  properties: {text: Upload Image, file_types: 'jpg, png'}
+  type: FileLoader
+  layout_properties: {grid_position: 'UHJDIP,INXAIS'}
+- name: label_5
+  properties: {text: Category}
+  type: Label
+  layout_properties: {grid_position: 'NHGORU,JICAYW'}
+- name: category
+  properties: {include_placeholder: true, placeholder: choose category}
+  type: DropDown
+  layout_properties: {grid_position: 'NHGORU,BQCBOK'}
 is_package: true
