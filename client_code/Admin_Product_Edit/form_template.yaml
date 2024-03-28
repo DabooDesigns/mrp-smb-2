@@ -46,4 +46,119 @@ components:
   properties: {include_placeholder: true, placeholder: choose category}
   type: DropDown
   layout_properties: {grid_position: 'NHGORU,BQCBOK'}
+  data_bindings:
+  - {property: selected_value, code: 'self.item[''category'']', writeback: false}
+- name: label_6
+  properties: {text: EAN}
+  type: Label
+  layout_properties: {grid_position: 'QFIZCE,WJGOVA'}
+- name: ean
+  properties: {}
+  type: TextBox
+  layout_properties: {grid_position: 'QFIZCE,RRWAXO'}
+  data_bindings:
+  - {property: text, code: 'self.item[''ean'']', writeback: false}
+- name: label_7
+  properties: {text: Customer SKU}
+  type: Label
+  layout_properties: {grid_position: 'HMGYWK,NUZNVP'}
+- name: customer_sku
+  properties: {}
+  type: TextBox
+  layout_properties: {grid_position: 'HMGYWK,FVQNHS'}
+  data_bindings:
+  - {property: text, code: 'self.item[''customer_sku'']', writeback: false}
+- name: label_8
+  properties: {text: CoGS}
+  type: Label
+  layout_properties: {grid_position: 'AQAADZ,IHQBRR'}
+- name: cogs
+  properties: {}
+  type: TextBox
+  layout_properties: {grid_position: 'AQAADZ,PJYHIA'}
+  data_bindings:
+  - {property: text, code: 'self.item[''cogs'']', writeback: false}
+- name: label_9
+  properties: {text: Wholesale Price}
+  type: Label
+  layout_properties: {grid_position: 'DTWRVH,MLAGBK'}
+- name: wholesale_price
+  properties: {}
+  type: TextBox
+  layout_properties: {grid_position: 'DTWRVH,KOATQA'}
+  event_bindings: {}
+  data_bindings:
+  - {property: text, code: 'self.item[''wholesale_price'']', writeback: false}
+- name: label_10
+  properties: {text: Retail Price}
+  type: Label
+  layout_properties: {grid_position: 'YHRTXY,DECSGV'}
+- name: retail_price
+  properties: {}
+  type: TextBox
+  layout_properties: {grid_position: 'YHRTXY,IMVYQK'}
+  data_bindings:
+  - {property: text, code: 'self.item[''retail_price'']', writeback: false}
+- name: label_11
+  properties: {text: Notes}
+  type: Label
+  layout_properties: {grid_position: 'SYHTWL,EDCAHU'}
+- name: notes
+  properties: {}
+  type: TextBox
+  layout_properties: {grid_position: 'SYHTWL,OMUXFC'}
+  data_bindings:
+  - {property: text, code: 'self.item[''notes'']', writeback: false}
+- name: label_12
+  properties: {text: Internal Notes}
+  type: Label
+  layout_properties: {grid_position: 'XCZWRW,JQNKOF'}
+- name: internal_notes
+  properties: {}
+  type: TextBox
+  layout_properties: {grid_position: 'XCZWRW,NIPRFO'}
+  data_bindings:
+  - {property: text, code: 'self.item[''internal_notes'']', writeback: false}
+- name: label_13
+  properties: {text: Status}
+  type: Label
+  layout_properties: {grid_position: 'IFWPYI,APERZP'}
+- name: status
+  properties: {include_placeholder: true, placeholder: choose status}
+  type: DropDown
+  layout_properties: {grid_position: 'IFWPYI,ZCGKVR'}
+  data_bindings:
+  - {property: selected_value, code: 'self.item[''status'']', writeback: false}
+- name: label_14
+  properties: {text: Minimum Order}
+  type: Label
+  layout_properties: {grid_position: 'WARTWD,WPPVTY'}
+- name: minimum_order
+  properties: {}
+  type: TextBox
+  layout_properties: {grid_position: 'WARTWD,UHGUFH'}
+- name: label_17
+  properties: {text: Revision}
+  type: Label
+  layout_properties: {grid_position: 'ACNRTV,CEJUVD'}
+- name: revision
+  properties: {}
+  type: TextBox
+  layout_properties: {grid_position: 'ACNRTV,FSLKGL'}
+- name: label_16
+  properties: {text: Replenish Threshold}
+  type: Label
+  layout_properties: {grid_position: 'HBOLTJ,IJWHAF'}
+- name: replenish_threshold
+  properties: {}
+  type: TextBox
+  layout_properties: {grid_position: 'HBOLTJ,JTKTYL'}
+- name: label_15
+  properties: {text: Manufacturing Instructions}
+  type: Label
+  layout_properties: {grid_position: 'QIJSMG,KYBTNC'}
+- name: manufacturing_instructions
+  properties: {}
+  type: form:dep_cuknp5dgztw0f:Quill
+  layout_properties: {grid_position: 'GLGFJR,CYKGFU'}
 is_package: true

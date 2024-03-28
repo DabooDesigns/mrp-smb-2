@@ -40,9 +40,6 @@ def add_products(product_dict):
     #   id=anvil.server.call('get_next_product_number'),
     created=datetime.now(),
 
-#    sku=anvil.server.call('get_short', product_dict.values(), 5),
-#    sku=anvil.server.call('get_short', 'This is a String' , 5),
-
     **product_dict
   )
 

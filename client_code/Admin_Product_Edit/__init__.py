@@ -15,3 +15,4 @@ class Admin_Product_Edit(Admin_Product_EditTemplate):
     self.user_companies = [(uc['name'], uc) for uc in app_tables.user_company.search()]
     self.customer_company.items = self.user_companies
 # Any code you write here will run before the form opens.
+
