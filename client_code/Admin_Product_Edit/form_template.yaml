@@ -137,6 +137,8 @@ components:
   properties: {}
   type: TextBox
   layout_properties: {grid_position: 'WARTWD,UHGUFH'}
+  data_bindings:
+  - {property: text, code: 'self.item[''minimum_order'']', writeback: false}
 - name: label_17
   properties: {text: Revision}
   type: Label
@@ -145,6 +147,8 @@ components:
   properties: {}
   type: TextBox
   layout_properties: {grid_position: 'ACNRTV,FSLKGL'}
+  data_bindings:
+  - {property: text, code: 'self.item[''revision'']', writeback: false}
 - name: label_16
   properties: {text: Replenish Threshold}
   type: Label
@@ -153,6 +157,8 @@ components:
   properties: {}
   type: TextBox
   layout_properties: {grid_position: 'HBOLTJ,JTKTYL'}
+  data_bindings:
+  - {property: text, code: 'self.item[''replenish_threshold'']', writeback: false}
 - name: label_15
   properties: {text: Manufacturing Instructions}
   type: Label

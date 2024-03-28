@@ -14,5 +14,11 @@ class Admin_Product_Edit(Admin_Product_EditTemplate):
 #    self.category_box.items = self.categories
     self.user_companies = [(uc['name'], uc) for uc in app_tables.user_company.search()]
     self.customer_company.items = self.user_companies
+    self.category = [(uc['category'], uc) for uc in app_tables.product_category.search()]
+    self.product_category.items = self.category
+
+
+    
+    self.manufacturing_instructions.toolbar = anvil.server.call('quill_toolbar')
 # Any code you write here will run before the form opens.
 
