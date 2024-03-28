@@ -14,8 +14,8 @@ class Admin_Product_Edit(Admin_Product_EditTemplate):
 #    self.category_box.items = self.categories
     self.user_companies = [(uc['name'], uc) for uc in app_tables.user_company.search()]
     self.customer_company.items = self.user_companies
-    self.category = [(uc['category'], uc) for uc in app_tables.product_category.search()]
-    self.product_category.items = self.category
+    self.product_category = [(uc['category'], uc) for uc in app_tables.product_category.search()]
+    self.category.items = self.product_category
 
 
     

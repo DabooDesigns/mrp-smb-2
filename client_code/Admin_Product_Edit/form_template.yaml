@@ -47,7 +47,7 @@ components:
   type: DropDown
   layout_properties: {grid_position: 'NHGORU,BQCBOK'}
   data_bindings:
-  - {property: selected_value, code: 'self.item[''category'']', writeback: false}
+  - {property: selected_value, code: 'self.item[''category'']', writeback: true}
 - name: label_6
   properties: {text: EAN}
   type: Label
@@ -57,7 +57,7 @@ components:
   type: TextBox
   layout_properties: {grid_position: 'QFIZCE,RRWAXO'}
   data_bindings:
-  - {property: text, code: 'self.item[''ean'']', writeback: false}
+  - {property: text, code: 'self.item[''ean'']', writeback: true}
 - name: label_7
   properties: {text: Customer SKU}
   type: Label
@@ -67,7 +67,7 @@ components:
   type: TextBox
   layout_properties: {grid_position: 'HMGYWK,FVQNHS'}
   data_bindings:
-  - {property: text, code: 'self.item[''customer_sku'']', writeback: false}
+  - {property: text, code: 'self.item[''customer_sku'']', writeback: true}
 - name: label_8
   properties: {text: CoGS}
   type: Label
@@ -77,7 +77,7 @@ components:
   type: TextBox
   layout_properties: {grid_position: 'AQAADZ,PJYHIA'}
   data_bindings:
-  - {property: text, code: 'self.item[''cogs'']', writeback: false}
+  - {property: text, code: 'self.item[''cogs'']', writeback: true}
 - name: label_9
   properties: {text: Wholesale Price}
   type: Label
@@ -88,7 +88,7 @@ components:
   layout_properties: {grid_position: 'DTWRVH,KOATQA'}
   event_bindings: {}
   data_bindings:
-  - {property: text, code: 'self.item[''wholesale_price'']', writeback: false}
+  - {property: text, code: 'self.item[''wholesale_price'']', writeback: true}
 - name: label_10
   properties: {text: Retail Price}
   type: Label
@@ -98,7 +98,7 @@ components:
   type: TextBox
   layout_properties: {grid_position: 'YHRTXY,IMVYQK'}
   data_bindings:
-  - {property: text, code: 'self.item[''retail_price'']', writeback: false}
+  - {property: text, code: 'self.item[''retail_price'']', writeback: true}
 - name: label_11
   properties: {text: Notes}
   type: Label
@@ -108,7 +108,7 @@ components:
   type: TextBox
   layout_properties: {grid_position: 'SYHTWL,OMUXFC'}
   data_bindings:
-  - {property: text, code: 'self.item[''notes'']', writeback: false}
+  - {property: text, code: 'self.item[''notes'']', writeback: true}
 - name: label_12
   properties: {text: Internal Notes}
   type: Label
@@ -118,7 +118,7 @@ components:
   type: TextBox
   layout_properties: {grid_position: 'XCZWRW,NIPRFO'}
   data_bindings:
-  - {property: text, code: 'self.item[''internal_notes'']', writeback: false}
+  - {property: text, code: 'self.item[''internal_notes'']', writeback: true}
 - name: label_13
   properties: {text: Status}
   type: Label
@@ -128,7 +128,7 @@ components:
   type: DropDown
   layout_properties: {grid_position: 'IFWPYI,ZCGKVR'}
   data_bindings:
-  - {property: selected_value, code: 'self.item[''status'']', writeback: false}
+  - {property: selected_value, code: 'self.item[''status'']', writeback: true}
 - name: label_14
   properties: {text: Minimum Order}
   type: Label
@@ -138,7 +138,7 @@ components:
   type: TextBox
   layout_properties: {grid_position: 'WARTWD,UHGUFH'}
   data_bindings:
-  - {property: text, code: 'self.item[''minimum_order'']', writeback: false}
+  - {property: text, code: 'self.item[''minimum_order'']', writeback: true}
 - name: label_17
   properties: {text: Revision}
   type: Label
@@ -148,7 +148,7 @@ components:
   type: TextBox
   layout_properties: {grid_position: 'ACNRTV,FSLKGL'}
   data_bindings:
-  - {property: text, code: 'self.item[''revision'']', writeback: false}
+  - {property: text, code: 'self.item[''revision'']', writeback: true}
 - name: label_16
   properties: {text: Replenish Threshold}
   type: Label
@@ -158,7 +158,7 @@ components:
   type: TextBox
   layout_properties: {grid_position: 'HBOLTJ,JTKTYL'}
   data_bindings:
-  - {property: text, code: 'self.item[''replenish_threshold'']', writeback: false}
+  - {property: text, code: 'self.item[''replenish_threshold'']', writeback: true}
 - name: label_15
   properties: {text: Manufacturing Instructions}
   type: Label
@@ -167,4 +167,6 @@ components:
   properties: {}
   type: form:dep_cuknp5dgztw0f:Quill
   layout_properties: {grid_position: 'GLGFJR,CYKGFU'}
+  data_bindings:
+  - {property: item, code: 'self.item[''manufacturing_instructions'']', writeback: false}
 is_package: true
