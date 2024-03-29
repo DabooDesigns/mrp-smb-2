@@ -12,6 +12,9 @@ class Admin_Product_Edit(Admin_Product_EditTemplate):
     self.init_components(**properties)
 #    self.categories = [(cat['name'], cat) for cat in app_tables.categories.search()]
 #    self.category_box.items = self.categories
+    user = anvil.users.get_user()
+    user_company = user['customer_company']['name']
+#    print (user_company)
     self.user_companies = [(uc['name'], uc) for uc in app_tables.user_company.search()]
     self.customer_company.items = self.user_companies
     self.product_category = [(uc['category'], uc) for uc in app_tables.product_category.search()]
