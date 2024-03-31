@@ -7,6 +7,7 @@ import anvil.server
 from PIL import Image
 import io
 
+@anvil.server.callable
 def name_image(file, name):
   img = Image.open(io.BytesIO(file.get_bytes()))
   bs = io.BytesIO()
