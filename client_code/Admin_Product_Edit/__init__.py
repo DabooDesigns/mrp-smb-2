@@ -17,12 +17,15 @@ class Admin_Product_Edit(Admin_Product_EditTemplate):
 #    print (user_company)
     self.user_companies = [(uc['name'], uc) for uc in app_tables.user_company.search()]
     self.customer_company.items = self.user_companies
-    self.product_category = [(uc['category'], uc) for uc in app_tables.product_category.search()]
+
+    self.product_category = [(uc['category'], uc) for uc in app_tables.product_category.search(name=user_company)]
     self.category.items = self.product_category
 
+    self.product_status = [(uc['status'], uc) for uc in app_tables.product_status.search()]
+    self.status.items = self.product_status
 
     
-    self.manufacturing_instructions.toolbar = anvil.server.call('quill_toolbar')
+#    self.manufacturing_instructions.toolbar = anvil.server.call('quill_toolbar')
 # Any code you write here will run before the form opens.
 
   def Image_Resizer_change(self, file, **event_args):
