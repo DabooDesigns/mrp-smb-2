@@ -110,8 +110,8 @@ db_schema:
     - name: image
       admin_ui: {width: 200, order: 1}
       type: media
-    - name: date_added
-      admin_ui: {width: 200, order: 2}
+    - name: created
+      admin_ui: {order: 2, width: 200}
       type: datetime
     - name: active
       admin_ui: {width: 200, order: 3}
@@ -139,6 +139,31 @@ db_schema:
       admin_ui: {width: 200, order: 2}
       type: number
     title: counter
+  manufacturing_images:
+    client: none
+    server: full
+    columns:
+    - name: name
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: image
+      admin_ui: {width: 200, order: 1}
+      type: media
+    - name: created
+      admin_ui: {width: 200, order: 2}
+      type: datetime
+    - name: active
+      admin_ui: {width: 200, order: 3}
+      type: bool
+    - name: product
+      admin_ui: {width: 200, order: 4}
+      type: link_single
+      target: products
+    - name: user
+      admin_ui: {width: 200, order: 5}
+      type: link_single
+      target: users
+    title: Manufacturing Images
   user_role:
     client: none
     server: full
