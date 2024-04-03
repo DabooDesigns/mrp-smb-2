@@ -40,9 +40,6 @@ db_schema:
     - name: description
       admin_ui: {width: 200, order: 2}
       type: string
-    - name: image
-      admin_ui: {width: 200, order: 3}
-      type: media
     - name: category
       admin_ui: {width: 200, order: 4}
       type: link_single
@@ -99,6 +96,10 @@ db_schema:
     - name: customer_sku
       admin_ui: {order: 6.5, width: 200}
       type: string
+    - name: image
+      admin_ui: {order: 3, width: 200}
+      type: link_multiple
+      target: product_images
     title: Products
   product_images:
     client: search
