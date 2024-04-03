@@ -124,6 +124,10 @@ db_schema:
       admin_ui: {width: 200, order: 5}
       type: link_single
       target: users
+    - name: type
+      admin_ui: {order: 4.5, width: 200}
+      type: link_multiple
+      target: product_image_type
     title: Product Images
   counter:
     client: search
@@ -250,6 +254,14 @@ db_schema:
       admin_ui: {order: 2.984375, width: 200}
       type: string
     title: User Company
+  product_image_type:
+    client: none
+    server: full
+    columns:
+    - name: type
+      admin_ui: {width: 200, order: 0}
+      type: string
+    title: Product Image Type
   product_files:
     client: search
     server: full
