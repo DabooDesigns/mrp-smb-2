@@ -41,5 +41,6 @@ class Admin_Product_View(Admin_Product_ViewTemplate):
       customer_company_short = anvil.server.call('get_short', 'customer_company', 5)
       sku = {customer_company_short}
       anvil.server.call('add_products', new_product)
+      
       self.refresh_products()
     pass

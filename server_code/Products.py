@@ -59,3 +59,14 @@ def delete_products(product):
     product.delete()
   else:
     raise Exception("Product does not exist")
+
+@anvil.server.callable
+def add_product_images(product_image_dict)
+  print (product_image_dict)
+  print (product_image_dict['image']['image'])
+  app_tables.product_images.add_row(
+  created=datetime.now(),
+
+    
+    **product_dict
+  )
