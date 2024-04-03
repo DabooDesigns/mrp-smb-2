@@ -18,9 +18,6 @@ class Admin_Product_Edit(Admin_Product_EditTemplate):
     self.user_companies = [(uc['name'], uc) for uc in app_tables.user_company.search()]
     self.customer_company.items = self.user_companies
 
-    self.product_category = [(uc['category'], uc) for uc in app_tables.product_category.search(name=user_company)]
-    self.category.items = self.product_category
-
     self.product_status = [(uc['status'], uc) for uc in app_tables.product_status.search()]
     self.status.items = self.product_status
 
@@ -42,5 +39,11 @@ class Admin_Product_Edit(Admin_Product_EditTemplate):
     image_medium = anvil.server.call("name_image",mfile,mfilename)
   
     anvil.media.download(image_medium)
+
+  def customer_company_change(self, **event_args):
+    self.product_category = [(uc['category'], uc) for uc in app_tables.product_category.search(customer_company=self.item['customer_company'])]
+    self.category.items = self.product_category
+
+
 
 
