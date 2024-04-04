@@ -22,7 +22,7 @@ class Admin_Product_Edit(Admin_Product_EditTemplate):
     self.status.items = self.product_status
 
     
-#    self.manufacturing_instructions.toolbar = anvil.server.call('quill_toolbar')
+    self.manufacturing_instructions.toolbar = anvil.server.call('quill_toolbar')
 # Any code you write here will run before the form opens.
 
   def Image_Resizer_change(self, file, **event_args):
