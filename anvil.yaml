@@ -1,7 +1,7 @@
 correct_dependency_ids: {dep_cuknp5dgztw0f: C6ZZPAPN4YYF5NVJ, dep_d5ymaflj1m8l8: ZFLRWWWEIXT2W2EK}
 dependencies:
 - dep_id: dep_cuknp5dgztw0f
-  version: {dev: false}
+  version: {dev: true}
   resolution_hints: {app_id: C6ZZPAPN4YYF5NVJ, name: Anvil Extras, package_name: anvil_extras}
 - dep_id: dep_d5ymaflj1m8l8
   version: {dev: false}
