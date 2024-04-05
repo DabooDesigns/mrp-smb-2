@@ -44,6 +44,10 @@ class Admin_Product_Edit(Admin_Product_EditTemplate):
     self.product_category = [(uc['category'], uc) for uc in app_tables.product_category.search(customer_company=self.item['customer_company'])]
     self.category.items = self.product_category
 
+  def image_change(self, file, **event_args):
+    """This method is called when a new file is loaded into this FileLoader"""
+    pass
+
 
 
 
