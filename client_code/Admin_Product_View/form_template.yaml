@@ -8,10 +8,11 @@ components:
   layout_properties: {grid_position: 'WUQRUQ,OPGSEG'}
   components:
   - name: button_1
-    properties: {text: Add Product}
+    properties: {text: Add Product, border: '', role: outlined-button}
     type: Button
     layout_properties: {grid_position: 'XPTVNE,XDJQTR'}
     event_bindings: {click: button_1_click}
+    data_bindings: []
   - name: label_1
     properties: {text: Admin Products}
     type: Label
