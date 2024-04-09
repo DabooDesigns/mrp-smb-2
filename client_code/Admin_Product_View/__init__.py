@@ -6,6 +6,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from ..Admin_Product_Edit import Admin_Product_Edit
+from ..C_Products import *
 
 
 class Admin_Product_View(Admin_Product_ViewTemplate):
