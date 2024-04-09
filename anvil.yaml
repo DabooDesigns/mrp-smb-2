@@ -27,7 +27,7 @@ metadata: {title: MRP SMB, description: ''}
 startup_form: null
 db_schema:
   products:
-    client: search
+    client: full
     server: full
     columns:
     - name: customer_company
@@ -102,7 +102,7 @@ db_schema:
       target: product_images
     title: Products
   product_images:
-    client: search
+    client: full
     server: full
     columns:
     - name: name

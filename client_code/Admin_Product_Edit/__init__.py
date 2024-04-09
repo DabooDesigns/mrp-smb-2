@@ -25,19 +25,6 @@ class Admin_Product_Edit(Admin_Product_EditTemplate):
     self.manufacturing_instructions.toolbar = anvil.server.call('quill_toolbar')
 # Any code you write here will run before the form opens.
 
-  def Image_Resizer_change(self, file, **event_args):
-    filename = file.name
-    tfile = anvil.image.generate_thumbnail(file, 120) 
-    mfile = anvil.image.generate_thumbnail(file, 480) 
-    lfile = anvil.image.generate_thumbnail(file, 1200) 
-
-    tstrings = ["thumbnail", filename]
-    tfilename = "-".join(tstrings)
-    mstrings = ["medium", filename]
-    mfilename = "-".join(mstrings)    
-    
-    image_medium = anvil.server.call("name_image",mfile,mfilename)
-  
     anvil.media.download(image_medium)
 
   def customer_company_change(self, **event_args):

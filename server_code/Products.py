@@ -6,7 +6,16 @@ from anvil.tables import app_tables
 import anvil.server
 from datetime import datetime
 import autoinc
+from PIL import Image
+import io
 
+@anvil.server.callable
+def name_image(file, name):
+  img = Image.open(io.BytesIO(file.get_bytes()))
+  bs = io.BytesIO()
+  img.save(bs, format="JPEG")
+  return anvil.BlobMedia("image/jpeg", bs.getvalue(), name=name)
+  
 @anvil.server.callable
 def get_short(string, howmany = 5):
   nosp = string.replace(" ", "")
@@ -60,7 +69,22 @@ def delete_products(product):
   else:
     raise Exception("Product does not exist")
 
-#@anvil.server.callable
+# @anvil.server.callable
+# def Image_Resizer_change(file):
+#   filename = file.name
+#   tfile = anvil.image.generate_thumbnail(file, 120) 
+#   mfile = anvil.image.generate_thumbnail(file, 480) 
+#   lfile = anvil.image.generate_thumbnail(file, 1200) 
+
+#   tstrings = ["thumbnail", filename]
+#   tfilename = "-".join(tstrings)
+#   mstrings = ["medium", filename]
+#   mfilename = "-".join(mstrings)    
+    
+#   image_medium = anvil.server.call("name_image",mfile,mfilename)    
+
+  
+   #@anvil.server.callable
 #def add_product_images(product_image_dict)
 #  print (product_image_dict)
 #  print (product_image_dict['image']['image'])
