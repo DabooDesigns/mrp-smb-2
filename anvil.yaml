@@ -128,6 +128,10 @@ db_schema:
     - name: manufacturing step
       admin_ui: {order: 0.5, width: 200}
       type: number
+    - name: product_reference
+      admin_ui: {width: 200, order: 6}
+      type: link_single
+      target: products
     title: Product Images
   counter:
     client: search
