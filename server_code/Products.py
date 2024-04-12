@@ -30,6 +30,11 @@ def get_products():
   )
 
 @anvil.server.callable
+def get_product_images(id):
+    return app_tables.product_images.search(product_id=id)
+
+
+@anvil.server.callable
 def add_products(product_dict):
   print (product_dict)
   print (product_dict['customer_company']['name'])
