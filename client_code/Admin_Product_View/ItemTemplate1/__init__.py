@@ -22,11 +22,9 @@ class ItemTemplate1(ItemTemplate1Template):
   def file_loader_1_change(self, file, **event_args):
     for fl in self.file_loader_1.files:
       fl1 = self.Image_Resizer_change(fl)
-      unique_id = self.item.get_id()
-      #      row = app_tables.products.get(id=)
-#      unique_id = row.get_id()      
-#      app_tables.product_images.add_row(image=fl1, [product][product] = unique_id)
-      print (unique_id)
+      unique_id = self.item['id']
+      app_tables.product_images.add_row(image=fl1, product_id=unique_id)
+#      print (unique_id)
     
 #      app_tables.product_images.add_row(image=fl1)
 

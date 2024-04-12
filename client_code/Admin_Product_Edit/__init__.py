@@ -25,15 +25,16 @@ class Admin_Product_Edit(Admin_Product_EditTemplate):
     self.manufacturing_instructions.toolbar = anvil.server.call('quill_toolbar')
 # Any code you write here will run before the form opens.
 
-    anvil.media.download(image_medium)
+#    anvil.media.download(image_medium)
 
   def customer_company_change(self, **event_args):
     self.product_category = [(uc['category'], uc) for uc in app_tables.product_category.search(customer_company=self.item['customer_company'])]
     self.category.items = self.product_category
 
-  def image_change(self, file, **event_args):
-    """This method is called when a new file is loaded into this FileLoader"""
-    pass
+
+ 
+
+
 
 
 
