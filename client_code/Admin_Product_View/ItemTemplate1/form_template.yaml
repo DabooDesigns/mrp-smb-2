@@ -1,5 +1,7 @@
 is_package: true
-container: {type: ColumnPanel}
+container:
+  type: ColumnPanel
+  properties: {col_spacing: medium}
 components:
 - name: id
   properties: {visible: false}

@@ -20,7 +20,7 @@ components:
 - name: products_panel
   properties: {item_template: Admin_Product_View.ItemTemplate1}
   type: RepeatingPanel
-  layout_properties: {grid_position: 'AUZPBH,ABCMWA'}
+  layout_properties: {grid_position: 'AUZPBH,ABCMWA', full_width_row: true}
 - name: product_grid
   properties:
     columns:
