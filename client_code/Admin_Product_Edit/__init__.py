@@ -5,6 +5,8 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+#from ..validation import Validator
+
 
 class Admin_Product_Edit(Admin_Product_EditTemplate):
   def __init__(self, **properties):
@@ -20,10 +22,18 @@ class Admin_Product_Edit(Admin_Product_EditTemplate):
 
     self.product_status = [(uc['status'], uc) for uc in app_tables.product_status.search()]
     self.status.items = self.product_status
-
     
     self.manufacturing_instructions.toolbar = anvil.server.call('quill_toolbar')
-# Any code you write here will run before the form opens.
+
+    self.validator = validation.Validator()
+#    self.validator.require_text_field(self.customer_company, self.validate_company)
+#    self.validator.require(self.name, self.validate_name)
+#    self.validator.require(self.category, self.validate_category)
+    
+    # Uncomment the line below to disable the button until the form is complete:
+    #self.validator.enable_when_valid(self.submit_btn)
+  
+  # Any code you write here will run before the form opens.
 
 #    anvil.media.download(image_medium)
 

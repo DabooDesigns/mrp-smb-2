@@ -7,10 +7,14 @@ components:
 - name: customer_company
   properties: {include_placeholder: true, placeholder: choose company}
   type: DropDown
-  layout_properties: {grid_position: 'LOKXWJ,DTXYGM'}
+  layout_properties: {grid_position: 'LOKXWJ,DTXYGM ZZUISH,UKKNZL'}
   data_bindings:
   - {property: selected_value, code: 'self.item[''customer_company'']', writeback: true}
   event_bindings: {change: customer_company_change}
+- name: validate_company
+  properties: {text: You must select a company., bold: true, role: null, foreground: '#ae0000'}
+  type: Label
+  layout_properties: {grid_position: 'LOKXWJ,DTXYGM FAZBNY,EKNWII'}
 - name: label_3
   properties: {text: Name}
   type: Label
@@ -18,9 +22,13 @@ components:
 - name: name
   properties: {}
   type: TextBox
-  layout_properties: {grid_position: 'XFPQLD,NSPTQG'}
+  layout_properties: {grid_position: 'XFPQLD,NSPTQG ZUEDJX,JVUUZL'}
   data_bindings:
   - {property: text, code: 'self.item[''name'']', writeback: true}
+- name: validate_name
+  properties: {text: Product must have a name., foreground: '#ae0000', bold: true}
+  type: Label
+  layout_properties: {grid_position: 'XFPQLD,NSPTQG BKRHLV,AJOSSN'}
 - name: label_4
   properties: {text: Description}
   type: Label
@@ -38,9 +46,13 @@ components:
 - name: category
   properties: {include_placeholder: true, placeholder: choose category}
   type: DropDown
-  layout_properties: {grid_position: 'NHGORU,BQCBOK'}
+  layout_properties: {grid_position: 'NHGORU,BQCBOK QDBQPW,VVHKVI'}
   data_bindings:
   - {property: selected_value, code: 'self.item[''category'']', writeback: true}
+- name: validate_category
+  properties: {foreground: '#ae0000', bold: true, text: Product Category may not be left blank.}
+  type: Label
+  layout_properties: {grid_position: 'NHGORU,BQCBOK GILDOD,KLMURZ'}
 - name: label_6
   properties: {text: EAN}
   type: Label
