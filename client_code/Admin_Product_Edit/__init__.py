@@ -27,9 +27,13 @@ class Admin_Product_Edit(Admin_Product_EditTemplate):
     self.manufacturing_instructions.toolbar = anvil.server.call('quill_toolbar')
 
     self.validator = validation.Validator()
-    self.validator.require_text_field(self.customer_company, self.validate_company)
-    self.validator.require(self.name, self.validate_name)
-    self.validator.require(self.category, self.validate_category)
+#    self.validator.require(self.customer_company, self.validate_company)
+
+    self.validator.require(self.customer_company, ['change'],
+                           self.customer_company.selected_value is not None,
+                           self.validate_company)  
+#    self.validator.require(self.name, self.validate_name)
+#    self.validator.require(self.category, self.validate_category)
     
     # Uncomment the line below to disable the button until the form is complete:
     #self.validator.enable_when_valid(self.submit_btn)
