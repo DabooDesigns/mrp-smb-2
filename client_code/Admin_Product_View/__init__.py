@@ -17,7 +17,7 @@ class Admin_Product_View(Admin_Product_ViewTemplate):
     # Any code you write here will run before the form opens.
   def refresh_products(self):
     self.products_panel.items = anvil.server.call('get_products')
-    self.products_panel.items = anvil.server.call('get_product_images', 49)
+#    self.products_panel.items = anvil.server.call('get_product_images', 49)
   
   
 
