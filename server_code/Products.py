@@ -37,14 +37,20 @@ def get_product_images(id):
 @anvil.server.callable
 def add_products(product_dict):
   print (product_dict)
-  print (product_dict['customer_company']['name'])
+#  print (product_dict['customer_company']['name'])
   ccval = (product_dict['customer_company']['name'])
-  print (ccval)
+  catval = (product_dict['category']['category'])
+  prodval = (product_dict['name'])
+  #  print (ccval)
   id = anvil.server.call('get_next_product_number')
 
 
   ccvalret = anvil.server.call('get_short', ccval)
-  strings = [ccvalret, str(id)]
+  catvalret = anvil.server.call('get_short', catval)
+  prodvalret = anvil.server.call('get_short', prodval)
+
+  
+  strings = [ccvalret, catvalret, prodvalret, str(id)]
   joined_string = "-".join(strings)
   print(joined_string)  # Output: apple-banana-cherry
 #  print (ccvalret)  
