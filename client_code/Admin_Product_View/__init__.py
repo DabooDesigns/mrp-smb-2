@@ -32,10 +32,14 @@ class Admin_Product_View(Admin_Product_ViewTemplate):
     # If the alert returned 'True', the save button was clicked.
     if save_clicked:
 #      short2 = self.get_short('stuff1' '5')
-#      print (short2)
-      customer_company_short = anvil.server.call('get_short', 'customer_company', 5)
-      sku = {customer_company_short}
-      anvil.server.call('add_products', new_product)
+      if self.validator.is_valid():
+        customer_company_short = anvil.server.call('get_short', 'customer_company', 5)
+        sku = {customer_company_short}
+        anvil.server.call('add_products', new_product)
       
-      self.refresh_products()
+        self.refresh_products()
+      else:
+        self.validator.show_all_errors()
+      #      print (short2)
+
     pass
