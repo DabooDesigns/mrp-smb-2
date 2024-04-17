@@ -178,6 +178,7 @@ components:
   properties: {text: Save, role: outlined-button}
   type: Button
   layout_properties: {grid_position: 'NSKMQX,DTYYYE'}
+  event_bindings: {click: save_button_click}
 - name: cancel_button
   properties: {text: Cancel, role: outlined-button}
   type: Button
