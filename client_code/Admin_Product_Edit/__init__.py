@@ -47,11 +47,12 @@ class Admin_Product_Edit(Admin_Product_EditTemplate):
     self.category.items = self.product_category
 
   def save_button_click(self, **event_args):
-    new_product = {}
-    print(new_product)
-#    customer_company_short = anvil.server.call('get_short', 'customer_company', 5)
-#    sku = {customer_company_short}
-#    anvil.server.call('add_products', new_product)    """This method is called when the button is clicked"""
+#    new_product = {}
+#    print(new_product)
+    new_product = 
+    customer_company_short = anvil.server.call('get_short', 'customer_company', 5)
+    sku = {customer_company_short}
+    anvil.server.call('add_products', new_product)    """This method is called when the button is clicked"""
 #    self.refresh_products()
 
 
