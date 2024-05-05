@@ -5,7 +5,6 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-#from ..validation import Validator
 from form_checker import validation
 
 
@@ -49,10 +48,10 @@ class Admin_Product_Edit(Admin_Product_EditTemplate):
   def save_button_click(self, **event_args):
 #    new_product = {}
 #    print(new_product)
-    new_product = 
+    new_product = (self.customer_company, self.name)
     customer_company_short = anvil.server.call('get_short', 'customer_company', 5)
     sku = {customer_company_short}
-    anvil.server.call('add_products', new_product)    """This method is called when the button is clicked"""
+#    anvil.server.call('add_products', new_product)    """This method is called when the button is clicked"""
 #    self.refresh_products()
 
 

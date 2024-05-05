@@ -6,7 +6,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from ..Admin_Product_Edit import Admin_Product_Edit
-#from ..validation import Validator
+from form_checker import validation
 
 
 class Admin_Product_View(Admin_Product_ViewTemplate):
@@ -32,14 +32,17 @@ class Admin_Product_View(Admin_Product_ViewTemplate):
     # If the alert returned 'True', the save button was clicked.
     if save_clicked:
 #      short2 = self.get_short('stuff1' '5')
-      if self.validator.is_valid():
+      try:
         customer_company_short = anvil.server.call('get_short', 'customer_company', 5)
-        sku = {customer_company_short}
+      except:
+        print("customer company not populated")
+      sku = {customer_company_short}
+#        if customer_company != '' | name != '':
+      try:
         anvil.server.call('add_products', new_product)
-      
-        self.refresh_products()
-      else:
-        self.validator.show_all_errors()
-      #      print (short2)
+      except:
+          print("missing required field")
+          alert("missing")
+    
+      self.refresh_products()
 
-    pass
