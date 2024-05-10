@@ -31,18 +31,23 @@ class Admin_Product_View(Admin_Product_ViewTemplate):
     )
     # If the alert returned 'True', the save button was clicked.
     if save_clicked:
-#      short2 = self.get_short('stuff1' '5')
-      try:
-        customer_company_short = anvil.server.call('get_short', 'customer_company', 5)
-      except:
-        print("customer company not populated")
+      customer_company_short = anvil.server.call('get_short', 'customer_company', 5)
       sku = {customer_company_short}
-#        if customer_company != '' | name != '':
-      try:
-        anvil.server.call('add_products', new_product)
-      except:
-          print("missing required field")
-          alert("missing")
-    
+      anvil.server.call('add_products', new_product)
       self.refresh_products()
+ 
+      
+#      try:
+#        customer_company_short = anvil.server.call('get_short', 'customer_company', 5)
+#      except:
+#        print("customer company not populated")
+#      sku = {customer_company_short}
+#        if customer_company != '' | name != '':
+#      try:
+#        anvil.server.call('add_products', new_product)
+#      except:
+#          print("missing required field")
+#          alert("missing")
+    
+#      self.refresh_products()
 
