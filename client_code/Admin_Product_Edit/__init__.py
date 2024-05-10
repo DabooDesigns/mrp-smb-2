@@ -21,6 +21,9 @@ class Admin_Product_Edit(Admin_Product_EditTemplate):
     self.user_companies = [(uc['name'], uc) for uc in app_tables.user_company.search()]
     self.customer_company.items = self.user_companies
 
+    self.product_category = [(uc['category'], uc) for uc in app_tables.product_category.search()]
+    self.category.items = self.product_category    
+    
     self.product_status = [(uc['status'], uc) for uc in app_tables.product_status.search()]
     self.status.items = self.product_status
     
@@ -50,7 +53,7 @@ class Admin_Product_Edit(Admin_Product_EditTemplate):
     new_product = {}
     customer_company_short = anvil.server.call('get_short', 'customer_company', 5)
     sku = {customer_company_short}
-    anvil.server.call('add_products', self.item)    """This method is called when the button is clicked"""
+#    anvil.server.call('add_products', self.item)    """This method is called when the button is clicked"""
     self.refresh_products()
 
 
