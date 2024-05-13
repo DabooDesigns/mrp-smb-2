@@ -6,7 +6,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 #from ..validation import Validator
-from form_checker import validation
+#from form_checker import validation
 
 
 class Admin_Product_Edit(Admin_Product_EditTemplate):
@@ -29,14 +29,14 @@ class Admin_Product_Edit(Admin_Product_EditTemplate):
     
     self.manufacturing_instructions.toolbar = anvil.server.call('quill_toolbar')
 
-    self.validator = validation.Validator()
-    self.validator.require(self.customer_company, ['change'],
-                           lambda tb: tb.selected_value is not None,
-                           self.validate_company)  
-    self.validator.require_text_field(self.name, self.validate_name)
-    self.validator.require(self.category, ['change'],
-                           lambda tb: tb.selected_value is not None,
-                           self.validate_category)  
+    # self.validator = validation.Validator()
+    # self.validator.require(self.customer_company, ['change'],
+    #                        lambda tb: tb.selected_value is not None,
+    #                        self.validate_company)  
+    # self.validator.require_text_field(self.name, self.validate_name)
+    # self.validator.require(self.category, ['change'],
+    #                        lambda tb: tb.selected_value is not None,
+                           # self.validate_category)  
     
     # Uncomment the line below to disable the button until the form is complete:
     #self.validator.enable_when_valid(self.submit_btn)
