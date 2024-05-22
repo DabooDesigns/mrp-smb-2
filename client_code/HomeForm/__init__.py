@@ -1,4 +1,4 @@
-from ._anvil_designer import BaseTemplate
+from ._anvil_designer import HomeFormTemplate
 from anvil import *
 import anvil.server
 import anvil.tables as tables
@@ -9,8 +9,9 @@ from ..Home import Home
 from ..Admin_Home import Admin_Home
 from ..Admin_Product_View import Admin_Product_View
 from ..Admin_Customer_Orders import Admin_Customer_Orders
+from ..navigation import navigation
 
-class Base(BaseTemplate):
+class HomeForm(HomeFormTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -85,10 +86,11 @@ class Base(BaseTemplate):
     pass
 
   def link_Home_click(self, **event_args):
-#    self.link_Home.role='selected'
-    self.content_panel.clear()
-    self.content_panel.add_component(Home())
-    pass
+# #    self.link_Home.role='selected'
+#     self.content_panel.clear()
+#     self.content_panel.add_component(Home())
+#     pass
+    navigation.go_home()
 
   def link_admin_customer_orders_click(self, **event_args):
 #    self.link_admin_products.role='selected'

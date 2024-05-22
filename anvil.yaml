@@ -15,7 +15,7 @@ services:
 - source: /runtime/services/anvil/secrets.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: Base}
+startup: {type: form, module: HomeForm}
 package_name: MRP_SMB
 allow_embedding: false
 name: MRP SMB 2
