@@ -18,8 +18,8 @@ class navigation():
 #     raise Exception("You must set the home form first.")
 #   return home_form
 
-def go_home():
-   set_active_nav('home')
+#def go_home():
+#   set_active_nav('home')
 #   set_title("")
 #   form = get_form()
 #   user = anvil.users.get_user()
@@ -27,3 +27,4 @@ def go_home():
 #     form.load_component(HomeDetailsComponent())
 #   else:
 #     form.load_component(HomeAnonComponent())
+#  pass
