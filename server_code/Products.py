@@ -52,7 +52,7 @@ def add_products(product_dict):
   
   strings = [ccvalret, catvalret, prodvalret, str(id)]
   joined_string = "-".join(strings)
-  print(joined_string)  # Output: apple-banana-cherry
+#  print(joined_string)  # Output: apple-banana-cherry
 #  print (ccvalret)  
   app_tables.products.add_row(
     id=id,
