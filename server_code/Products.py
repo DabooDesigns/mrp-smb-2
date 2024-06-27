@@ -63,7 +63,11 @@ def add_products(product_dict):
     **product_dict
   )
 
-
+@anvil.server.callable
+def create_product(**product_dict):
+  print (product_dict)
+  app_tables.products.add_row(**product_dict)
+  return
 
 @anvil.server.callable
 def update_products(product, product_dict):
