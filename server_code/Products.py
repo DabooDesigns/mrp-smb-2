@@ -63,6 +63,8 @@ def add_products(product_dict):
     **product_dict
   )
 
+
+
 @anvil.server.callable
 def update_products(product, product_dict):
   # check that the entry given is really a row in the ‘entries’ table
